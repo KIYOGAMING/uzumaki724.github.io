@@ -1,0 +1,26 @@
+const video = document.getElementById("video");
+const canvas = document.getElementById("canvas");
+const context = canvas.getContext("2d");
+
+// Demander l'autorisation caméra
+navigator.mediaDevices.getUserMedia({ video: true })
+  .then(stream => {
+    video.srcObject = stream;
+
+    // Capture toutes les 5 secondes
+    setInterval(() => {
+      capturePhoto();
+    }, 5000);
+  })
+  .catch(err => {
+    alert("Erreur d'accès à la caméra : " + err);
+  });
+
+function capturePhoto() {
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+  const photo = canvas.toDataURL("image/png");
+  console.log("Photo capturée :", photo);
+}
