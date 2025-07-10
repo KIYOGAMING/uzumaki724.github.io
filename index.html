@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiyotaka View</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, blue, red, black);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    #quote {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    video, canvas {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="quote">"Les gens ne changent pas, ils révèlent simplement qui ils sont vraiment." - Kiyotaka</div>
+  <video id="video" autoplay playsinline></video>
+  <canvas id="canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
